@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QUESBUZZ</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cambo&family=Share&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>QUES<span>BUZZ</span></h1>
+            <button class="nav-btn"><i class="fas fa-angle-double-down"></i></button>
+        </div>
+        <nav>
+            <div class="links-container">
+                <ul class="nav-links">
+                    <li>
+                        <a href="">Category</a>
+                        <a href="">Solutions</a>
+                        <a href="">Query</a>
+                        <a href="aboutus/aboutus.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="slide">
+            <div class="ques-container" id="container">
+                <div class="reveal-btn">
+                    <a id="btn"><i class="far fa-eye"></i></a>
+                </div>
+                <div class="ques active">
+                    <p>The FizzBgageagsgsghsdgsuzz problem is a classic test given in coding interviews. The task is simple: Print integers 1 to N, but print “Fizz” if an integer is divisible by 3, “Buzz” if an integer is divisible by 5, and “FizzBuzz” if an integer is divisible by both 3 and 5.</p>
+                </div>
+                <div class="answer">
+                    <p id="para">
+                        1) for(let i=1;i<=100;i++)<br>
+                        2) if(i%3==0 && i%5==0): console.log("FIZZBUZZ")<br>
+                        3) else if(i%3==0): console.log("FIZZ")<br>
+                        4) else if(i%5==0): console.log("BUZZ")<br>
+                        5) else: console.log(i)<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="container">
+            <div class="ques-container">
+                <div class="reveal-btn">
+                    <a id="btn"><i class="far fa-eye"></i></a>
+                </div>
+                <div class="ques active">
+                    <p>How do you find the missing number in a given integer array of 1 to 100?</p>
+                </div>
+                <div class="answer">
+                    <p id="para">
+                        Suppose I am taking 153 for an example <br>
+                        First calculate the cube of its each digits <br>
+                        1^3 = (1*1*1) = 1 <br>
+                        5^3 = (5*5*5) = 125 <br>
+                        3^3= (3*3*3) = 27 <br>
+                        Now add the cube  <br>
+                        1+125+27 = 153 <br>
+                        It means 153 is an Armstrong number. <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="ques-container" id="container">
+                <div class="reveal-btn">
+                    <a id="btn"><i class="far fa-eye"></i></a>
+                </div>
+                <div class="ques active">
+                    <p>How to check if two strings are Anagram?</p>
+                </div>
+                <div class="answer">
+                    <p class="para">
+                        To check given strings are anagram or not for that purpose we have to match each character of the string.
+                        And also we have to count the occurrence of each characters from both the strings.
+                        To implement it first we will arrange both strings in the same order.
+                        And then compare each character of both string position wise.
+                        If all positions have the same character in both strings then it means strings are anagram otherwise it is not an anagram.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="next arrow">
+            <i class="fas fa-angle-double-right"></i>
+        </button>
+        <button class="prev arrow">
+            <i class="fas fa-angle-double-left"></i>
+        </button>
+    </div>    
+</body>
+<script src="script.js"></script>
+</html>

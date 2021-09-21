@@ -1,0 +1,303 @@
+body{
+    margin: 0;
+    background-color: #F0F5F9;
+    font-family: 'poppins';
+    overflow-y: hidden;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: #1E2022;
+    color:#F0F5F9;
+}
+
+header nav{
+    margin-right: 50px;
+}
+
+nav li{
+    list-style-type: none;
+}
+
+header h1{
+    margin-right: 48rem;
+    margin-left: 2rem;
+}
+
+header span{
+    color: rgb(88, 224, 88);
+}
+
+nav a{
+    text-decoration: none;
+    color:#F0F5F9;
+    margin-left: 35px;
+}
+
+.links-container{
+    display: flex;
+    align-items: center;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+   transition: all 0.2s ease-in-out;
+}
+
+
+.main{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 88vh;
+}
+
+.ques-container{
+    margin-left: 25vw;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    min-height: 40vh;
+    border-radius: 10px;
+    background-color: #C9D6DF;
+    border: solid 1px #52616B;
+}
+
+.ques{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ques p{
+    font-family: 'Cambo', serif;
+    width: 80%;
+    font-size: 1.8rem;
+    margin-top: 0px;
+    color:#1E2022;
+    word-spacing: 5px;
+}
+
+.reveal-btn{
+    font-size: 30px;
+    margin-left: 0.5rem;
+}
+
+.reveal-btn a{
+    color:#52616B;
+}
+
+.active{
+    display: flex;
+}
+
+.answer{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.show{
+    display: flex;
+}
+
+.answer p{
+    font-family: 'Cambo', serif;
+    width: 80%;
+    font-size: 1.8rem;
+    margin-top: 0px;
+    color:#1e221f;
+    word-spacing: 5px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-btn{
+    display: none;
+    font-size: 28px;
+    border-radius: 5px;
+    color: white;
+    background-color: #1E2022;
+    outline: none;
+    border: none;
+}
+
+.nav-btn :hover{
+    font-size: 34px;
+    color: #91ecb7;
+}
+
+.arrow{ 
+    position: absolute;
+    bottom: 18rem;
+    font-size: 46px;
+    color:#52616B;
+    width: 5rem;
+    border: none;
+    background-color: transparent;
+}
+
+.next:hover{
+    color: #52e28e;
+    font-size: 52px;
+}
+.next{
+    right: 10rem;
+}
+
+.prev{
+    left: 10rem;
+}
+
+.prev:hover{
+    color: rgb(255, 86, 86);
+    font-size: 52px;
+}
+@media screen and (max-width:400px) {
+
+    header{
+        flex-direction: column;
+    }
+
+    header h1{
+        margin-right: 3rem;
+    }
+
+    header nav{
+        margin-right: 80px;
+    }
+
+    nav a{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .nav-btn{
+        display: block;
+    }
+
+    .ques-container{
+        width: 80%;
+        margin-top: -12rem;
+        min-height: 50vh;
+    }
+
+    .ques p{
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    .answer p{
+        font-size: 1.4rem;
+        margin-top: 1rem;
+    }
+    
+    .show-links .nav-links{
+        display: block;
+    }
+    
+    .links-container{
+        height: auto !important;
+    }
+}
+
+/*script:::
+const reveal = document.getElementById("btn");
+const text = document.querySelector(".ques");
+const main = document.querySelector(".main")
+const ans = document.querySelector(".answer");
+const container = document.getElementById("container");
+const paragraph = document.getElementById("para");
+
+reveal.addEventListener('click',function(){
+    text.classList.toggle("active");
+    if(text.classList != "ques active"){
+        reveal.innerHTML = "<i class=\"fas fa-eye-slash\"></i>"
+        ans.classList.add("show");
+        container.style.backgroundColor = "#17B978";
+        paragraph.style.color = "white";
+        reveal.style.color="white";
+
+    }
+    else{
+        reveal.innerHTML= "<i class=\"far fa-eye\"></i>";
+        ans.classList.remove("show");
+        container.style.backgroundColor = "#C9D6DF";
+        reveal.style.color="#52616B"
+    }
+});
+
+const toggle = document.querySelector(".nav-btn");
+const linkscontainer = document.querySelector(".links-container");
+const links = document.querySelector(".nav-links");
+
+toggle.addEventListener("click",function(){
+    linkscontainer.classList.toggle("show-links");
+    const container_height = linkscontainer.getBoundingClientRect().height;
+    console.log(container_height);
+    const links_height = links.getBoundingClientRect().height;
+    console.log(links_height);
+    if(container_height==0)
+    {
+        linkscontainer.style.height = `${links_height}px`;
+    }
+    else{
+        linkscontainer.style.height = 0;
+    }
+});
+
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+const slides = document.querySelectorAll(".slide");
+console.log(prev)
+slides.forEach(function(slide,index){
+    slide.style.left = `${index*100}%`;
+})
+
+let page_no = 0;
+
+next.addEventListener("click",function(){
+    page_no++;
+    move_page();
+});
+
+prev.addEventListener("click",function(){
+    page_no--;
+    move_page();
+});
+
+function move_page(){
+
+    if(page_no==slides.length){
+        page_no=0;
+    }
+
+    if(page_no<0){
+        page_no = slides.length-1;
+    }
+    
+    slides.forEach(function(slide){
+        slide.style.transform = `translateX(-${page_no * 100}%)`;
+    })
+}
+
+*/
