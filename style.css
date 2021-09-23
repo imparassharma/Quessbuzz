@@ -176,9 +176,7 @@ nav a{
     header nav{
         margin-right: 80px;
     }
-    
-    .slide{
-        overflow-x: hidden;
+
     nav a{
         font-size: 18px;
         margin-bottom: 10px;
@@ -189,6 +187,18 @@ nav a{
         flex-direction: column;
     }
 
+    .arrow{
+        bottom: 1rem;
+        color: rgb(59, 55, 55);
+    }
+
+    .next{
+        margin-right: 10rem;
+    }
+
+    .prev{
+        margin-left: 10rem;
+    }
     .nav-links{
         display: none;
     }
@@ -201,6 +211,7 @@ nav a{
         width: 80%;
         margin-top: -12rem;
         min-height: 50vh;
+        margin-left: 10vw;
     }
 
     .ques p{
