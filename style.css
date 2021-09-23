@@ -2,7 +2,7 @@ body{
     margin: 0;
     background-color: #F0F5F9;
     font-family: 'poppins';
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 header{
